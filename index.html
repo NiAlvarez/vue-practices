@@ -5,6 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .box{
+            background: #ddd;
+            display: inline-block;
+            margin: 20px;
+            padding: 100px 0;
+            text-align: center;
+            width: 400px;
+        }
+    </style>
     <script src="https://unpkg.com/vue@3.0.2"></script>
 </head>
 <body>
@@ -19,7 +29,13 @@
             <span v-else>Show Books</span>
         </button>
 
-        <div v-show="showBooks">Currently showing books</div>
+
+        <br>
+        <!-- Mouse events -->
+        <div class="box" @mouseover="handleEvent($event, 5)">mouseover (enter)</div>
+        <div class="box" @mouseleave="handleEvent">mouseleave</div>
+        <div class="box" @dblclick="handleEvent">double click</div>
+        <div class="box" @mousemove="handleMouseMove"> position - {{ x }} {{ y }}</div>
 
     </div>
 
